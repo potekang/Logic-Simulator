@@ -1,0 +1,25 @@
+module top
+nets 3
+ net in[0] 3
+  evl_zero 0
+  and 1
+  evl_output sim_out 1
+ net in[1] 3
+  evl_one 0
+  and 2
+  evl_output sim_out 1
+ net out 2
+  and 0
+  evl_output sim_out 0
+components 4
+ component evl_zero 1
+   pin 1 in[0] 
+ component evl_one 1
+   pin 1 in[1] 
+ component and 3
+   pin 1 out 
+   pin 1 in[0] 
+   pin 1 in[1] 
+ component evl_output sim_out 2
+   pin 1 out 
+   pin 2 in[0] in[1] 
